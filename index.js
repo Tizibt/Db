@@ -2,7 +2,7 @@ import express, { text } from 'express';
 import cors from 'cors';
 import mongoose from 'mongoose';
 import env from 'dotenv';
-import connectDB from './db server.js'; 
+import connectDB from './server.js'; 
 
 const app = express();
 app.use(cors());
@@ -18,7 +18,7 @@ const collection = db.collection("students");
 
 app.get("/", (req, res) => {
     res.json({
-        message: "📚 Welcome to the students  FORM API!",
+        message: " Welcome to the students  !",
         endpoints: {
             getAllstudents: { method: "GET", url: "/students" },
             getsudentById: { method: "GET", url: "/students/:id" },
@@ -61,11 +61,12 @@ app.post("/students", async (req, res) => {
 
 // 📌 Update a student
 app.put("/students/:id", async (req, res) => {
-    const {Name,Age,Grade}=req.body;
+    const {Name,Age,Grade,department}=req.body;
     const updatedstudent= {
         Name:Name,
         Age:Age,
         Grade:Grade,
+        department:department
     }
     try {
         await collection.findOneAndUpdate(
