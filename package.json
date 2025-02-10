@@ -1,8 +1,6 @@
 {
   "name": "db",
   "version": "1.0.0",
-  "main":"index.js",
-  "type":"module",
   "description": "",
   "keywords": [],
   "homepage": "https://github.com/Tizibt/Db#readme",
@@ -10,19 +8,23 @@
     "url": "https://github.com/Tizibt/Db/issues"
   },
   "repository": {
-    "type": "git",
+    "type": "module",
     "url": "git+https://github.com/Tizibt/Db.git"
   },
   "license": "ISC",
   "author": "",
-  
+  "type": "module",
+  "main": "index.js",
   "scripts": {
-    "start": "node server.js"
+    "start": "nodemon index.js"
   },
   "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.7",
     "express": "^4.21.2",
     "mongodb": "^6.13.0",
-    "node": "^23.7.0"
-  },
-  "devDependencies": {}
+    "mongoose": "^8.10.0",
+    "node": "^23.7.0",
+    "nodemon": "^3.1.9"
+  }
 }
